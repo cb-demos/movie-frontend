@@ -1,0 +1,68 @@
+@import "tokens";
+
+.hero {
+  background-image: linear-gradient(to bottom, $dark-bg, hsl(0, 0%, 10%, 0.4), $dark-bg), url("/bee-grid.png");
+  background-size: cover;
+  //background: $dark-bg;
+  //background: linear-gradient(0deg, $dark-bg 0%, hsl(0, 0%, 6%) 40%, hsl(0, 0%, 20%) 100%);
+}
+
+.signInBlock {
+  color: hsl(0, 0%, 100%);
+  max-width: 450px;
+  margin: 0 auto;
+  padding-block: 5rem;
+  form {
+    background: hsl(0, 0%, 0%, 0.85);
+    padding: 4rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: none;
+    }
+
+    div {
+      padding-block: 0.5rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+    }
+
+    input {
+      background: hsl(0, 0%, 20%);
+      color: hsl(0, 0%, 90%);
+      border: none;
+      padding: 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 400;
+      border-radius: 3px;
+      width: 100%;
+    }
+    ::placeholder {
+      color: hsl(0, 0%, 70%)
+    }
+  }
+}
+
+.signInButton {
+  border: 0;
+  color: hsl(45, 100%, 20%);
+  font-weight: 600;
+  background: $primary-color;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  &:hover, &:focus {
+    background: $primary-lighter;
+  }
+  &:active {
+    background: $primary-darker;
+  }
+}

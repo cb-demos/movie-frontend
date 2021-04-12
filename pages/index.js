@@ -10,7 +10,7 @@ export default function Home() {
         <title>BeeTV 🐝📺</title>
       </Head>
       <div className={styles.hero}>
-        <Navbar />
+        <Navbar showLogin={true} />
         <section className={styles.heroText}>
           <h1>Limited movies, TV shows, and more related to bees.</h1>
           <p>Watch forever. Cancel never.</p>
