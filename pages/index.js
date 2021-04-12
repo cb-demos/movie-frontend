@@ -1,65 +1,71 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Navbar from "../components/Navbar";
+import styles from "../styles/Home.module.scss";
+import { useState } from "react";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>BeeTV 🐝📺</title>
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
+      <div className={styles.hero}>
+        <Navbar />
+        <section className={styles.heroText}>
+          <h1>Limited movies, TV shows, and more related to bees.</h1>
+          <p>Watch forever. Cancel never.</p>
+          <small>Ready to get started? Enter your email to get started.</small>
+          <div className={styles.buttonWrapper}>
+            <GetStartedButton />
+          </div>
+        </section>
+      </div>
+      <div className={styles.more}>
+        <section>
+          <div>
+            <h2>Enjoy on your TV.</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Watch BeeTV on any device you have. Smart TVs, Smartphones, Smart
+              watches, and more.
             </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+          </div>
+        </section>
+      </div>
     </div>
-  )
+  );
 }
+
+const GetStartedButton = () => {
+  const [email, setEmail] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+  return (
+    <form className={styles.getStartedButton} onSubmit={handleSubmit}>
+      <label htmlFor="email">Your email address</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Email address"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+      />
+      <button>
+        Get Started
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+    </form>
+  );
+};

@@ -1,0 +1,95 @@
+@import "tokens";
+
+.hero {
+  background-image: linear-gradient(to bottom, $dark-bg, hsl(0, 0%, 10%, 0.4), $dark-bg), url("/bee-grid.png");
+  background-size: cover;
+  //background: $dark-bg;
+  //background: linear-gradient(0deg, $dark-bg 0%, hsl(0, 0%, 6%) 40%, hsl(0, 0%, 20%) 100%);
+}
+
+.heroText {
+  color: hsl(0, 0%, 100%);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-block: 6rem;
+}
+
+.heroText h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.heroText p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.heroText small {
+  font-size: 1.125rem;
+}
+
+.buttonWrapper {
+  padding: 1rem;
+}
+
+.getStartedButton {
+  display: flex;
+}
+
+.getStartedButton label {
+  display: none;
+}
+
+.getStartedButton input {
+  padding: 1rem 0.5rem;
+  flex-grow: 1;
+  font-size: 1.125rem;
+}
+
+.getStartedButton button {
+  background: $primary-color;
+  padding: 1rem 1.5rem;
+  border: 0;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background: $primary-lighter;
+  }
+
+  &:active {
+    background: $primary-darker;
+  }
+
+  svg {
+    height: 1.25rem;
+  }
+}
+
+.more {
+  color: white;
+
+  section {
+    border-top: hsl(0, 0%, 20%) 8px solid;
+    padding-block: 6rem;
+
+    div {
+      max-width: $max-width;
+      margin: 0 auto;
+
+      h2 {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+      p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: hsl(0, 0%, 90%)
+      }
+    }
+  }
+}
+
