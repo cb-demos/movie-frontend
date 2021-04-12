@@ -47,6 +47,17 @@
       color: hsl(0, 0%, 70%)
     }
   }
+  p {
+    color: hsl(0, 0%, 60%);
+    font-weight: 500;
+
+    a {
+      color: hsl(0, 0%, 90%);
+      &:hover {
+        text-decoration: underline $primary-color;
+      }
+    }
+  }
 }
 
 .signInButton {

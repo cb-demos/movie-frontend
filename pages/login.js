@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import styles from "../styles/Login.module.scss";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -39,6 +40,12 @@ export default function Login() {
             <button type="submit" className={styles.signInButton}>
               Sign In
             </button>
+            <p>
+              New to BeeTV?{" "}
+              <Link href="/">
+                <a>Sign up now.</a>
+              </Link>
+            </p>
           </form>
         </section>
       </div>
