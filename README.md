@@ -2,6 +2,8 @@ This is a demo application inspired by Netflix.
 
 ## Getting Started
 
+Copy `.env.sample` to `.env.local` and replace with your CloudBees Feature Management environment token.
+
 First, run the development server:
 
 ```bash
