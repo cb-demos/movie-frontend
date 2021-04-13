@@ -12,7 +12,7 @@
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  padding-block: 6rem;
+  padding-block: 8rem;
 }
 
 .heroText h1 {
@@ -71,10 +71,21 @@
 
 .more {
   color: white;
+  width: 100%;
 
   section {
     border-top: hsl(0, 0%, 20%) 8px solid;
     padding-block: 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 4rem;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+
 
     div {
       max-width: $max-width;
@@ -92,4 +103,3 @@
     }
   }
 }
-

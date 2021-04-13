@@ -23,11 +23,14 @@ export default function Home() {
       <div className={styles.more}>
         <section>
           <div>
-            <h2>Enjoy on your TV.</h2>
+            <h2>Enjoy on any device.</h2>
             <p>
               Watch BeeTV on any device you have. Smart TVs, Smartphones, Smart
               watches, and more.
             </p>
+          </div>
+          <div>
+            <img src="/phone-mockup.png" alt="Bee movie on a phone" />
           </div>
         </section>
       </div>
