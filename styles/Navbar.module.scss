@@ -1,7 +1,7 @@
 @import "tokens";
 
 .container {
-
+  z-index: 10;
 }
 
 .maxWidthWrapper {
@@ -32,4 +32,24 @@
   }
   border-radius: 3px;
   cursor: pointer;
+}
+
+.navItems {
+  color: hsl(0, 0%, 80%);
+  font-weight: 500;
+  font-size: 0.95rem;
+  list-style: none;
+  padding-inline: 1rem;
+  a {
+    padding-inline: 1rem;
+    &:hover {
+      color: white;
+      text-decoration: underline $primary-color 2px;
+    }
+  }
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
 }

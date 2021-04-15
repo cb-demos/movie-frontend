@@ -3,10 +3,12 @@ import Navbar from "../components/Navbar";
 import styles from "../styles/Login.module.scss";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
   return (
     <div>
       <Head>
@@ -37,7 +39,14 @@ export default function Login() {
                 onChange={(event) => setPassword(event.target.value)}
               />
             </div>
-            <button type="submit" className={styles.signInButton}>
+            <button
+              onClick={(event) => {
+                event.preventDefault();
+                router.push("/list");
+              }}
+              type="submit"
+              className={styles.signInButton}
+            >
               Sign In
             </button>
             <p>
