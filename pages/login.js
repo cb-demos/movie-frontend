@@ -39,14 +39,7 @@ export default function Login() {
                 onChange={(event) => setPassword(event.target.value)}
               />
             </div>
-            <button
-              onClick={(event) => {
-                event.preventDefault();
-                router.push("/list");
-              }}
-              type="submit"
-              className={styles.signInButton}
-            >
+            <button type="submit" className={styles.signInButton}>
               Sign In
             </button>
             <p>

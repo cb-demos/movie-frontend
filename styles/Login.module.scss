@@ -1,7 +1,7 @@
 @import "tokens";
 
 .hero {
-  background-image: linear-gradient(to bottom, $dark-bg, hsl(0, 0%, 10%, 0.4), $dark-bg), url("/bee-grid.png");
+  background-image: linear-gradient(to bottom, $dark-bg, hsl(0, 0%, 10%, 0.4), $dark-bg), url("/bee-grid-custom.png");
   background-size: cover;
   //background: $dark-bg;
   //background: linear-gradient(0deg, $dark-bg 0%, hsl(0, 0%, 6%) 40%, hsl(0, 0%, 20%) 100%);

@@ -30,7 +30,7 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <img src="/phone-mockup.png" alt="Bee movie on a phone" />
+            <img src="/phone.png" alt="Bee movie on a phone" />
           </div>
         </section>
       </div>
