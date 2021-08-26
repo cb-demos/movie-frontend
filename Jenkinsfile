@@ -55,7 +55,7 @@ pipeline {
                 node() {
                     checkout scm
                     imageTag = "${env.GIT_COMMIT[0..6]}".trim()
-                    cloudBeesFlowTriggerRelease configuration: targetCDConfiguration, parameters: '{"release":{"releaseName":"' + targetReleaseName + '","stages":[{"stageName":"Pre-Prod","stageValue":""},{"stageName":"Prod","stageValue":""},{"stageName":"Quality Assurance (QA)","stageValue":""},{"stageName":"Release Readiness","stageValue":""}],"pipelineName":"' + targetReleaseName + '","parameters":[{"parameterName":"imageTag","parameterValue":'+ imageTag +'}]}}', projectName: targetCDProject, releaseName: targetReleaseName, startingStage: 'Release Readiness'
+                    cloudBeesFlowTriggerRelease configuration: targetCDConfiguration, parameters: '{"release":{"releaseName":"' + targetReleaseName + '","stages":[{"stageName":"Pre-Prod","stageValue":""},{"stageName":"Prod","stageValue":""},{"stageName":"Quality Assurance (QA)","stageValue":""},{"stageName":"Release Readiness","stageValue":""}],"pipelineName":"' + targetReleaseName + '","parameters":[{"parameterName":"imageTag","parameterValue":"'+ imageTag +'"}]}}', projectName: targetCDProject, releaseName: targetReleaseName, startingStage: 'Release Readiness'
                 }
             }
         }
