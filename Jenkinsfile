@@ -46,12 +46,15 @@ pipeline {
             beforeAgent true
             branch 'master'
         }
+        environment {
+            shortCommit = "${GIT_COMMIT[0..6]}"
+        }
         agent any
         steps {
             script {
                 node() {
                     checkout scm
-                    imageTag = "${GIT_COMMIT[0..6]}"
+                    imageTag = shortCommit
                     cloudBeesFlowTriggerRelease configuration: targetCDConfiguration, parameters: '{"release":{"releaseName":"' + targetReleaseName + '","stages":[{"stageName":"Pre-Prod","stageValue":""},{"stageName":"Prod","stageValue":""},{"stageName":"Quality Assurance (QA)","stageValue":""},{"stageName":"Release Readiness","stageValue":""}],"pipelineName":"' + targetReleaseName + '","parameters":[{"parameterName":"FE-Build-number","parameterValue":""},{"parameterName":"BE-Build-number","parameterValue":""},{"parameterName":"microblog-backend_version","parameterValue":"1.0.2"},{"parameterName":"microblog-frontend_version","parameterValue":'+ imageTag +'},{"parameterName":"microblog-db_version","parameterValue":"12.1-alpine"}]}}', projectName: targetCDProject, releaseName: targetReleaseName, startingStage: 'Release Readiness'
                 }
             }
