@@ -18,7 +18,13 @@ export default function Home() {
           <p>Watch forever. Cancel never.</p>
           <small>Ready to get started? Enter your email to get started.</small>
           <div className={styles.buttonWrapper}>
-            <GetStartedButton />
+            {flags.fancySignup.isEnabled() ? (
+              <div>
+                <FancyGetStartedButton />
+              </div>
+            ) : (
+              <GetStartedButton />
+            )}
           </div>
         </section>
       </div>
