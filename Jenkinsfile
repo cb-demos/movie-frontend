@@ -4,7 +4,6 @@ pipeline {
   agent none
   options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
-    skipDefaultCheckout true
   }
   environment {
     gcpProject = "core-flow-research"
@@ -35,7 +34,7 @@ pipeline {
         branch 'main'
       }
       steps {
-        kanikoBuildPushGeneric("beetv", "${env.GIT_COMMIT[0..6]}", "${gcpProject}/${repoOwner}")
+        kanikoBuildPushGeneric("beetv", "${GIT_COMMIT[0..6]}", "${gcpProject}/${repoOwner}")
         {
           checkout scm
         }
