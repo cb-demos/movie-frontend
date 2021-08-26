@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import styles from "../styles/Home.module.scss";
 import { useState, useEffect } from "react";
 import { flags } from "../utils/flags";
+import { useRouter } from "next/router";
 
 export default function Home() {
   return (
@@ -47,8 +48,11 @@ export default function Home() {
 
 const GetStartedButton = () => {
   const [email, setEmail] = useState("");
+  const router = useRouter();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    router.push("/login");
   };
   return (
     <form className={styles.getStartedButton} onSubmit={handleSubmit}>
@@ -82,8 +86,11 @@ const GetStartedButton = () => {
 
 const FancyGetStartedButton = () => {
   const [email, setEmail] = useState("");
+  const router = useRouter();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    router.push("/login");
   };
   return (
     <form
