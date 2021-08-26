@@ -9,7 +9,7 @@ pipeline {
   environment {
     gcpProject = "core-flow-research"
     repoOwner = "dw"
-    shortCommit = sh(script: "git rev-parse HEAD", returnStdout: true).trim()[0..6]
+    shortCommit = "${sh(script: "git rev-parse HEAD", returnStdout: true).trim()[0..6]}"
   }
   stages('Test and Build')
   {
