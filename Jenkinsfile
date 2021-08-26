@@ -4,10 +4,12 @@ pipeline {
   agent none
   options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
+    skipDefaultCheckout true
   }
   environment {
     gcpProject = "core-flow-research"
     repoOwner = "dw"
+    shortCommit = sh(script: "git rev-parse HEAD", returnStdout: true).trim()[0..6]
   }
   stages('Test and Build')
   {
@@ -34,7 +36,7 @@ pipeline {
         branch 'main'
       }
       steps {
-        kanikoBuildPushGeneric("beetv", "${GIT_COMMIT[0..6]}", "${gcpProject}/${repoOwner}")
+        kanikoBuildPushGeneric("beetv", shortCommit, "${gcpProject}/${repoOwner}")
         {
           checkout scm
         }
