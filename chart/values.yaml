@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: gcr.io/core-flow-research/movie-frontend
+  repository: gcr.io/core-flow-research/dw/movie-frontend
   pullPolicy: IfNotPresent
   tag: ""
 
