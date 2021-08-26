@@ -35,7 +35,7 @@ pipeline {
         branch 'main'
       }
       steps {
-        kanikoBuildPushGeneric("beetv", "${GIT_COMMIT[0..6]}", "${gcpProject}/${repoOwner}")
+        kanikoBuildPushGeneric("beetv", "${env.GIT_COMMIT[0..6]}", "${gcpProject}/${repoOwner}")
         {
           checkout scm
         }
