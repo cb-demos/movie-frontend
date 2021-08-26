@@ -4,7 +4,6 @@ pipeline {
   agent any
   options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
-    skipDefaultCheckout true
   }
   environment {
     gcpProject = "core-flow-research"
