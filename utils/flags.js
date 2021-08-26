@@ -1,18 +1,16 @@
 import { Flag, Rox } from "rox-ssr";
 
-const flags = {
-  enableTutorial: new Flag(false),
+export const flags = {
+  fancySignup: new Flag(false),
 };
+
+const configurationFetchedHandler = (fetcherResults) => {};
 
 export const initRollout = async () => {
-  const options = {};
+  const options = {
+    configurationFetchedHandler,
+  };
 
-  Rox.register("test", flags);
+  Rox.register("frontend", flags);
   await Rox.setup(process.env.NEXT_PUBLIC_FM_KEY, options);
 };
-
-if (Rox.flags.length > 0) {
-  initRollout().then(() => {
-    console.log("Done loading CloudBees Feature Management");
-  });
-}

@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import styles from "../styles/Home.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { flags } from "../utils/flags";
 
 export default function Home() {
   return (
@@ -16,7 +17,13 @@ export default function Home() {
           <p>Watch forever. Cancel never.</p>
           <small>Ready to get started? Enter your email to get started.</small>
           <div className={styles.buttonWrapper}>
-            <GetStartedButton />
+            {flags.fancySignup.isEnabled() ? (
+              <div>
+                <FancyGetStartedButton />
+              </div>
+            ) : (
+              <GetStartedButton />
+            )}
           </div>
         </section>
       </div>
@@ -45,6 +52,46 @@ const GetStartedButton = () => {
   };
   return (
     <form className={styles.getStartedButton} onSubmit={handleSubmit}>
+      <label htmlFor="email">Your email address</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Email address"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+      />
+      <button>
+        Get Started
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+    </form>
+  );
+};
+
+const FancyGetStartedButton = () => {
+  const [email, setEmail] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+  return (
+    <form
+      className={[styles.getStartedButton, styles.fancyGetStartedBlock].join(
+        " "
+      )}
+      onSubmit={handleSubmit}
+    >
       <label htmlFor="email">Your email address</label>
       <input
         id="email"

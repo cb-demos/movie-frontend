@@ -37,6 +37,19 @@
   display: flex;
 }
 
+.fancyGetStartedBlock {
+  background: $primary-lighter;
+  padding: 20px;
+
+  button {
+    background: black !important;
+    color: white !important;
+    &:hover {
+      background: #2d2d2d !important;
+    }
+  }
+}
+
 .getStartedButton label {
   display: none;
 }
