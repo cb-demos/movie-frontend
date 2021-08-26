@@ -9,6 +9,9 @@ pipeline {
     gcpProject = "core-flow-research"
     repoOwner = "dw"
     shortCommit = "${sh(script: "git rev-parse HEAD", returnStdout: true).trim()[0..6]}"
+    targetCDConfiguration = "CD"
+    targetReleaseName = "BeeTV Release"
+    targetCDProject = "ldonley Demo"
   }
   stages('Test and Build')
   {
