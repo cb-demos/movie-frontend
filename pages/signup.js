@@ -1,0 +1,56 @@
+import Head from "next/head";
+import Navbar from "../components/Navbar";
+import styles from "../styles/Login.module.scss";
+import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+export default function SignUp() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+  return (
+    <div>
+      <Head>
+        <title>Sign Up | BeeTV 🐝📺</title>
+      </Head>
+      <div className={styles.hero}>
+        <Navbar />
+        <section className={styles.signInBlock}>
+          <form action="">
+            <h1>Sign Up</h1>
+            <div>
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="email">Password</label>
+              <input
+                id="email"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </div>
+            <button type="submit" className={styles.signInButton}>
+              Sign Up
+            </button>
+            <p>
+              Already have an account?{" "}
+              <Link href="/login">
+                <a>Sign in now.</a>
+              </Link>
+            </p>
+          </form>
+        </section>
+      </div>
+    </div>
+  );
+}

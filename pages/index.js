@@ -52,7 +52,7 @@ const GetStartedButton = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    router.push("/login");
+    router.push("/signup");
   };
   return (
     <form className={styles.getStartedButton} onSubmit={handleSubmit}>
@@ -90,7 +90,7 @@ const FancyGetStartedButton = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    router.push("/login");
+    router.push("/signup");
   };
   return (
     <form
