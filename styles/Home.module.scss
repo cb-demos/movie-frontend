@@ -38,7 +38,8 @@
 }
 
 .fancyGetStartedBlock {
-  background: $primary-lighter;
+  background: linear-gradient(to bottom, $primary-lighter, $primary-darker);
+  border-radius: 10px;
   padding: 20px;
 
   button {
