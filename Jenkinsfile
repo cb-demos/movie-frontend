@@ -1,7 +1,7 @@
 library 'cb-days@master'
 def testPodYaml = libraryResource 'podtemplates/vuejs/vuejs-test-pod.yml'
 pipeline {
-  agent none
+  agent any
   options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
     skipDefaultCheckout true
