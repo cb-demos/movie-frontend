@@ -2,6 +2,7 @@ import "../styles/globals.scss";
 import "../utils/flags";
 import { Rox } from "rox-ssr";
 import { initRollout } from "../utils/flags";
+import GoogleTagManager from "../components/GoogleTagManager";
 
 if (Rox.flags.length === 0) {
   initRollout().then(() => {
@@ -10,7 +11,11 @@ if (Rox.flags.length === 0) {
 }
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <GoogleTagManager>
+      <Component {...pageProps} />
+    </GoogleTagManager>
+  );
 }
 
 export default MyApp;
